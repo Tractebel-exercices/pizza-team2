@@ -26,7 +26,7 @@ public class OrderController {
 	}
 	
 	@CrossOrigin(origins = "http://localhost:8080")
-	@RequestMapping(path="/order", method=RequestMethod.POST, consumes="application/json")
+	@RequestMapping(path="/addOrder", method=RequestMethod.POST, consumes="application/json")
 	public Order addOrder(@RequestBody Order order) {
 		orderService.addOrder(order);
 		return order;
