@@ -6,7 +6,7 @@ public class Customer {
 	private String name;
 	private String email;
 	private String street;
-	private String number;
+	private String streetNumber;
 	private String complement;
 	private String postalCode;
 	private String city;
@@ -47,12 +47,12 @@ public class Customer {
 		this.street = street;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getStreetNumber() {
+		return streetNumber;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setStreetNumber(String streetNumber) {
+		this.streetNumber = streetNumber;
 	}
 
 	public String getComplement() {
