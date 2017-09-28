@@ -25,4 +25,11 @@ public class OrderController {
 		return order;
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8080")
+	@RequestMapping(path="/order", method=RequestMethod.POST, consumes="application/json")
+	public Order addOrder(@RequestBody Order order) {
+		orderService.addOrder(order);
+		return order;
+	}
+	
 }
