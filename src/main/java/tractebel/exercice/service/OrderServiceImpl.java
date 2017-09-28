@@ -1,7 +1,5 @@
 package tractebel.exercice.service;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +17,6 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Order addOrder(Order order) {
-		
-		order.setDeliveryTime(new Date().toString());
-		order.setOrderTime(new Date().toString());
-//		order.setPrice(price);
 		orderDao.save(order);
 		return order;
 	}

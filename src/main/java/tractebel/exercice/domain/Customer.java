@@ -5,15 +5,8 @@ public class Customer {
 	private Long id;
 	private String name;
 	private String email;
-	private String street;
-	private String streetNumber;
-	private String complement;
-	private String postalCode;
-	private String city;
-	private String country;
-	private String paymentProvidder;
-	private String paymentNumber;
-	private String expiration;
+	private Address address;
+	private Payment payment;
 
 	public Long getId() {
 		return id;
@@ -39,76 +32,20 @@ public class Customer {
 		this.email = email;
 	}
 
-	public String getStreet() {
-		return street;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
-	public String getStreetNumber() {
-		return streetNumber;
+	public Payment getPayment() {
+		return payment;
 	}
 
-	public void setStreetNumber(String streetNumber) {
-		this.streetNumber = streetNumber;
-	}
-
-	public String getComplement() {
-		return complement;
-	}
-
-	public void setComplement(String complement) {
-		this.complement = complement;
-	}
-
-	public String getPostalCode() {
-		return postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getPaymentProvidder() {
-		return paymentProvidder;
-	}
-
-	public void setPaymentProvidder(String paymentProvidder) {
-		this.paymentProvidder = paymentProvidder;
-	}
-
-	public String getPaymentNumber() {
-		return paymentNumber;
-	}
-
-	public void setPaymentNumber(String paymentNumber) {
-		this.paymentNumber = paymentNumber;
-	}
-
-	public String getExpiration() {
-		return expiration;
-	}
-
-	public void setExpiration(String expiration) {
-		this.expiration = expiration;
+	public void setPayment(Payment payment) {
+		this.payment = payment;
 	}
 
 }

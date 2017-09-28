@@ -1,5 +1,7 @@
 package tractebel.exercice;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +20,9 @@ public class OrderController {
 	
 	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(path="/order", method=RequestMethod.POST, consumes="application/json")
-	public Order addOrder(@RequestBody Order order) {
-		
-		orderService.addOrder(order);
+	public Order triggerOrder(@RequestBody Map<Object, Object> map) {
+		Order order = orderService.getOrder(1L);
 		return order;
 	}
-	
-	
 	
 }
