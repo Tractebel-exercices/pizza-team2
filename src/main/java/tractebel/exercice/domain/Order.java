@@ -1,5 +1,10 @@
 package tractebel.exercice.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ORDER")
 public class Order {
 
 	private Customer customer;
