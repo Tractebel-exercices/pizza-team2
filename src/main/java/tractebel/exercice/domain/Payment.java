@@ -2,15 +2,28 @@ package tractebel.exercice.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "PAYMENT")
 public class Payment {
 
+	private Long id;
+	private Long paymentId;
     private String provider;
     private String number;
     private String expiration;
+    
+    @Id
+    @Column(name = "PAYMENT_ID")
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
     @Column(name = "PROVIDER")
     public String getProvider() {
