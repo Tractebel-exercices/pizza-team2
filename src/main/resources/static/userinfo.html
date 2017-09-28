@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+ <script language="javascript">
+    
+    // define the function within the global scope
+   // $.fn.MessageBox = function(msg) {
+    //;    alert(msg);
+   // };
+
+    // or, if you want to encapsulate variables within the plugin
+    //(function($) {
+   //     $.fn.MessageBoxScoped = function(msg) {
+    //        alert(msg);
+    //    };
+  //  })(jQuery); //<-- make sure you pass jQuery into the $ parameter
+    
+ </script>
+ 
+ <script language="javascript">
+	 $.fn.send = function(){
+	    	var customer = {
+	    		name: $("#your_name").val(),
+	    		email: $("#your_email").val()
+	    	}
+	    	var address= {
+	    		add_street: $("#your_street").val(),
+	    		add_street_num: $("#your_street_number").val(),
+	    		complement: $("#your_complement").val(),
+	    		postal: $("#your_postal").val(),
+	    		city: $("#your_city").val(),
+	    		country: $("#your_country").val()
+	    	}
+	    	
+	    	var payment = {
+	    		cc_provider: $("#your_cc_provider").val(),
+	    		cc_num: $("#your_cc_num").val(),
+	    		cc_expire: $("#your_cc_expire").val()
+	    	}
+	    	var menuorder = {
+	    		pizza: $("#your_pizza_fav").val()
+	    	}
+	    	
+	    	alert(pizza);
+	    	
+	    	$('#target').html('sending..');
+	
+	        $.ajax({
+	            url: '/userinfo/PizzaSubmit',
+	            type: 'post',
+	            dataType: 'json',
+	            success: function (data) {
+	                $('#target').html(data.msg);
+	            },
+	            data: person, address, payment, menuorder
+	        });
+	    }
+	    
+ </script>
+ 
+</head>
+
+<head>
+  <title>Red Pizza - Customer Info</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">RED<span class="logo_colour">Pizza</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Home</a></li>
+          <li class="selected"><a href="userinfo.html">User Info</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div class="sidebar">
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Customer Details</h1>
+        <p>Please input the following info:</p>
+        <form action="#" method="post">
+          <div class="form_settings">
+            <p><span>Name</span><input class="contact" type="text" name="your_name" value="" /></p>
+            <p><span>Email Address</span><input class="contact" type="text" name="your_email" value="" /></p>
+            <br/><p>Address</p>
+            <p><span>Street</span><input class="contact" type="text" name="your_street" value="" /></p>
+            <p><span>Number</span><input class="contact" type="text" name="your_street_number" value="" /></p>
+            <p><span>Complement</span><input class="contact" type="text" name="your_complement" value="" /></p>
+            <p><span>Postal Code</span><input class="contact" type="text" name="your_postal" value="" /></p>
+            <p><span>City</span><input class="contact" type="text" name="your_city" value="" /></p>
+            <p><span>Country</span><input class="contact" type="text" name="your_country" value="" /></p>
+            <br/><p>Payment</p>
+            <p><span>Provider</span><input class="contact" type="text" name="your_cc_provider" value="" /></p>
+            <p><span>Number</span><input class="contact" type="text" name="your_cc_num" value="" /></p>
+            <p><span>Expiration</span><input class="contact" type="text" name="your_cc_expire" value="" /></p>
+            <br/><p>Pizza Details</p>
+            <p><span>Favorite Pizza</span>
+            <select class="contact">
+            	<option class="contact" type="text" name="your_pizza_fav" value="0000"></option>
+            	<option class="contact" type="text" name="your_pizza_fav" value="0001">Cheezy Pizza</option>
+            	<option class="contact" type="text" name="your_pizza_fav" value="0002">Hawaiian Pizza</option>
+            	<option class="contact" type="text" name="your_pizza_fav" value="0003">Pepperoni</option>
+            	<option class="contact" type="text" name="your_pizza_fav" value="0004">Test</option>
+            </select>
+            </p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" onClick="$(this).send()"/></p>
+          </div>
+        </form>
+       
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright | RED PIZZA | 2017 | TEAM 2
+    </div>
+  </div>
+</body>
+</html>
